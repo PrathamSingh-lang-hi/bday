@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e584e5 10%, #e33c3c 100% , #ee802b 30%);
+  background-size: 200% 200%;
+  animation: gradientTransition 5s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradientTransition {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.photo-frame {
+  border-radius: 15%;
+  border: 15px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: rotate(-5deg);
+  transition: all 0.5s ease;
+  background: linear-gradient(135deg, #f4f4f4, #f8f6f5, #f3f4f6, #f9fbfb);
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite, glowEffect 1.5s ease-in-out infinite;
+}
+
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7), 0 0 25px rgba(255, 105, 180, 0.7), 0 0 35px rgba(255, 105, 180, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 105, 180, 1), 0 0 35px rgba(255, 105, 180, 1), 0 0 45px rgba(255, 105, 180, 1);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7), 0 0 25px rgba(255, 105, 180, 0.7), 0 0 35px rgba(255, 105, 180, 0.7);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+
+    .dancing-font {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .heart:before, .heart:after {
+      position: absolute;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: #ff6b81;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(0.9); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(0.9); }
+    }
+
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #f00;
+      opacity: 0;
+    }
+
+    .photo-frame {
+      border-radius: 5%;
+      border: 15px solid white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transform: rotate(-5deg);
+      transition: all 0.3s ease;
+    }
+
+    .photo-frame:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .message-box {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transform: rotate(2deg);
+      transition: all 0.3s ease;
+    }
+
+    .message-box:hover {
+      transform: rotate(0deg);
+    }
+
+    .btn-glow {
+      box-shadow: 0 0 10px #ff6b81, 0 0 20px #ff6b81;
+      transition: all 0.3s ease, transform 0.2s;
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 15px #ff6b81, 0 0 25px #ff6b81, 0 0 35px #ff6b81;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    #confettiBtn {
+      transition: transform 0.2s;
+    }
+
+    #confettiBtn:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    #heartBtn {
+      animation: pulse 2s infinite;
+      transition: transform 0.2s;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+  <audio id="birthdaySong" loop>
+    <source src="worldcouldendwithyou-[AudioTrimmer.com].mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" id="confetti-container"></div>
+
+  <div class="max-w-2xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden relative z-10">
+    <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-8 text-center relative overflow-hidden">
+      <div class="absolute inset-0 flex items-center justify-center opacity-20">
+        <div class="heart"></div>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-white dancing-font mb-2">Happy Birthday!</h1>
+      <p class="text-xl text-white opacity-90">To the most amazing girlfriend in the world</p>
+    </div>
+
+    <div class="p-8 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="photo-frame bg-gray-100 rounded-lg overflow-hidden floating">
+        <div class="h-64 flex items-center justify-center">
+          <img src="dhr.png" alt="Our Photo" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <div class="message-box p-6 flex flex-col justify-center">
+        <h2 class="text-2xl font-bold text-rose-600 mb-4 dancing-font">My Dearest Love,</h2>
+        <p class="text-gray-700 mb-4">On this special day, I want you to know how incredibly lucky I am to have you in my life. Your smile brightens my darkest days, your laugh is my favorite melody, and your love is my greatest treasure.</p>
+        <p class="text-gray-700 mb-4">You're more beautiful than any sunset, kinder than any soul I've known, and more precious to me than words can express.</p>
+        <p class="text-gray-700 mb-4 dancing-font text-xl text-rose-600">Happy Birthday, my love! May this year bring you all the happiness you bring to others.</p>
+        <p class="text-right font-bold text-gray-700">Forever yours,</p>
+        <p class="text-right dancing-font text-2xl text-rose-600">Pratham😁</p>
+      </div>
+    </div>
+
+    <div class="px-8 pb-8 text-center">
+      <button id="musicBtn" class="btn-glow bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-6 rounded-full inline-flex items-center mb-4">
+        <i class="fas fa-music mr-2"></i> Play Birthday Song
+      </button>
+      <button id="confettiBtn" class="ml-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full inline-flex items-center mb-4">
+        <i class="fas fa-sparkles mr-2"></i> Throw Confetti!
+      </button>
+
+      <div class="mt-4">
+        <p class="text-gray-500 text-sm">Click the heart below for a special surprise!</p>
+        <button id="heartBtn" class="mt-2 text-rose-500 hover:text-rose-600 text-4xl">
+          <i class="fas fa-heart"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center text-gray-500 text-sm">
+    Made with <i class="fas fa-heart text-rose-500"></i> for you
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const birthdaySong = document.getElementById('birthdaySong');
+      const musicBtn = document.getElementById('musicBtn');
+      const confettiBtn = document.getElementById('confettiBtn');
+      const heartBtn = document.getElementById('heartBtn');
+      const confettiContainer = document.getElementById('confetti-container');
+      let isPlaying = false;
+
+      birthdaySong.volume = 0.2; // softer music
+
+      // Music button
+      musicBtn.addEventListener('click', function() {
+        if (isPlaying) {
+          birthdaySong.pause();
+          musicBtn.innerHTML = '<i class="fas fa-music mr-2"></i> Play Birthday Song';
+          musicBtn.classList.remove('bg-rose-600');
+          musicBtn.classList.add('bg-rose-500');
+        } else {
+          birthdaySong.play();
+          musicBtn.innerHTML = '<i class="fas fa-pause mr-2"></i> Pause Song';
+          musicBtn.classList.remove('bg-rose-500');
+          musicBtn.classList.add('bg-rose-600');
+        }
+        isPlaying = !isPlaying;
+      });
+
+      // Confetti button
+      confettiBtn.addEventListener('click', function() {
+        createConfetti();
+      });
+
+      // Heart button
+      heartBtn.addEventListener('click', function() {
+        createConfetti();
+        showHeartMessage();
+      });
+
+      // Create confetti
+      function createConfetti() {
+        const colors = ['#ff6b81', '#ff8fab', '#ffb3c6', '#ffccd5', '#fff0f3', '#ffddd2', '#fec89a', '#ffe066', '#fab1a0', '#fd79a8'];
+
+        for (let i = 0; i < 100; i++) {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + 'vw';
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.width = Math.random() * 10 + 5 + 'px';
+          confetti.style.height = Math.random() * 10 + 5 + 'px';
+          confetti.style.opacity = '1';
+
+          const animationDuration = Math.random() * 3 + 2;
+          confetti.style.animation = `fall ${animationDuration}s linear forwards`;
+
+          confettiContainer.appendChild(confetti);
+
+          setTimeout(() => {
+            confetti.remove();
+          }, animationDuration * 1000);
+        }
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+          @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      // Show special heart message
+      function showHeartMessage() {
+        const messageBox = document.querySelector('.message-box');
+        const specialMessage = document.createElement('div');
+        specialMessage.className = 'bg-rose-100 border-l-4 border-rose-500 p-4 mb-4 rounded';
+        specialMessage.innerHTML = `
+          <p class="text-rose-700 font-bold"><i class="fas fa-heart mr-2 text-rose-500"></i> I love you more than anything in this world!</p>
+        `;
+        const firstParagraph = messageBox.querySelector('p');
+        messageBox.insertBefore(specialMessage, firstParagraph.nextSibling);
+
+        setTimeout(() => {
+          specialMessage.style.transition = 'opacity 1s';
+          specialMessage.style.opacity = '0';
+          setTimeout(() => {
+            specialMessage.remove();
+          }, 1000);
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>
